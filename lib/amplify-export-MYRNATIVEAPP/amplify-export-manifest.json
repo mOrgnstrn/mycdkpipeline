@@ -1,0 +1,72 @@
+{
+  "stackName": "amplify-myrnativeapp-tfcproject-235154",
+  "props": {
+    "templateFile": "root-stack-template.json",
+    "parameters": {
+      "AuthRoleName": "amplify-myrnativeapp-tfcproject-235154-authRole",
+      "UnauthRoleName": "amplify-myrnativeapp-tfcproject-235154-unauthRole",
+      "DeploymentBucketName": "amplify-myrnativeapp-tfcproject-235154-deployment"
+    },
+    "preserveLogicalIds": true,
+    "loadNestedStacks": {
+      "authMYRNATIVEAPP": {
+        "templateFile": "auth/MYRNATIVEAPP/MYRNATIVEAPP-cloudformation-template.json",
+        "parameters": {
+          "identityPoolName": "testAuthIdentityPool",
+          "allowUnauthenticatedIdentities": false,
+          "resourceNameTruncated": "myrnate94f1fe7",
+          "userPoolName": "MYRNATIVEAPP",
+          "autoVerifiedAttributes": [
+            "email"
+          ],
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS Text Message"
+          ],
+          "smsAuthenticationMessage": "Your authentication code is {####}",
+          "smsVerificationMessage": "Your verification code is {####}",
+          "emailVerificationSubject": "Verification code: {####}",
+          "emailVerificationMessage": "Verification code: {####}",
+          "defaultPasswordPolicy": false,
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": [
+            "Requires Lowercase",
+            "Requires Numbers",
+            "Requires Symbols",
+            "Requires Uppercase"
+          ],
+          "requiredAttributes": [
+            "email"
+          ],
+          "aliasAttributes": [],
+          "userpoolClientGenerateSecret": false,
+          "userpoolClientRefreshTokenValidity": 30,
+          "userpoolClientWriteAttributes": [],
+          "userpoolClientReadAttributes": [],
+          "userpoolClientLambdaRole": "MYRNATe94f1fe7_userpoolclient_lambda_role",
+          "userpoolClientSetAttributes": false,
+          "sharedId": "e94f1fe7",
+          "resourceName": "MYRNATIVEAPP",
+          "authSelections": "identityPoolAndUserPool",
+          "serviceName": "Cognito",
+          "usernameAttributes": [
+            "email"
+          ],
+          "useDefault": "manual",
+          "userPoolGroups": false,
+          "userPoolGroupList": [],
+          "adminQueries": false,
+          "thirdPartyAuth": false,
+          "authProviders": [],
+          "usernameCaseSensitive": false,
+          "useEnabledMfas": true,
+          "breakCircularDependency": true,
+          "dependsOn": [],
+          "env": "tfcproject"
+        },
+        "preserveLogicalIds": true,
+        "loadNestedStacks": {}
+      }
+    }
+  }
+}

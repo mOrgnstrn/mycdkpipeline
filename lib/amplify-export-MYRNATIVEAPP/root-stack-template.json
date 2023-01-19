@@ -1,5 +1,5 @@
 {
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.6.1\",\"stackType\":\"root\",\"metadata\":{}}",
+  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"10.6.2\",\"stackType\":\"root\",\"metadata\":{}}",
   "AWSTemplateFormatVersion": "2010-09-09",
   "Parameters": {
     "DeploymentBucketName": {
@@ -152,13 +152,7 @@
         }
       }
     },
-    "apimytodoapp": {
-      "Type": "AWS::CloudFormation::Stack",
-      "Properties": {
-        "Parameters": {}
-      }
-    },
-    "authmytodoappdf58cc98": {
+    "authMYRNATIVEAPP": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
         "Parameters": {
@@ -181,7 +175,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authmytodoappdf58cc98"
+        "authMYRNATIVEAPP"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -276,7 +270,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authmytodoappdf58cc98",
+            "authMYRNATIVEAPP",
             "Outputs.IdentityPoolId"
           ]
         },
